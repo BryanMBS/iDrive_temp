@@ -1,0 +1,355 @@
+Your environment has been set up for using Node.js 20.11.1 (x64) and npm.
+
+C:\Users\Usuario>cd downloads
+
+C:\Users\Usuario\Downloads>cd Rest_MySQL_Fastapi_React
+
+C:\Users\Usuario\Downloads\Rest_MySQL_Fastapi_React>fastapi dev main.py
+INFO     Using path main.py
+INFO     Resolved absolute path C:\Users\Usuario\Downloads\Rest_MySQL_Fastapi_React\main.py
+ERROR    Path does not exist main.py
+
+C:\Users\Usuario\Downloads\Rest_MySQL_Fastapi_React>cd apicitypark
+El sistema no puede encontrar la ruta especificada.
+
+C:\Users\Usuario\Downloads\Rest_MySQL_Fastapi_React>cd appcitypark
+
+C:\Users\Usuario\Downloads\Rest_MySQL_Fastapi_React\AppCityPark>fastapi dev main.py
+INFO     Using path main.py
+INFO     Resolved absolute path C:\Users\Usuario\Downloads\Rest_MySQL_Fastapi_React\AppCityPark\main.py
+INFO     Searching for package file structure from directories with __init__.py files
+INFO     Importing from C:\Users\Usuario\Downloads\Rest_MySQL_Fastapi_React\AppCityPark
+
+ ╭─ Python module file ─╮
+ │                      │
+ │  🐍 main.py          │
+ │                      │
+ ╰──────────────────────╯
+
+INFO     Importing module main
+╭───────────────────────────────────────── Traceback (most recent call last) ──────────────────────────────────────────╮
+│ C:\Python312\Lib\site-packages\mysql\connector\connection_cext.py:335 in _open_connection                            │
+│                                                                                                                      │
+│    332 │   │   │   cnx_kwargs["use_kerberos_gssapi"] = True                                                          │
+│    333 │   │                                                                                                         │
+│    334 │   │   try:                                                                                                  │
+│ ❱  335 │   │   │   self._cmysql.connect(**cnx_kwargs)                                                                │
+│    336 │   │   │   self._cmysql.converter_str_fallback = self._converter_str_fallback                                │
+│    337 │   │   │   if self.converter:                                                                                │
+│    338 │   │   │   │   self.converter.str_fallback = self._converter_str_fallback                                    │
+│                                                                                                                      │
+│ ╭────────────────────────────────────────────── locals ──────────────────────────────────────────────╮               │
+│ │     charset_name = 'utf8mb4'                                                                       │               │
+│ │       cnx_kwargs = {                                                                               │               │
+│ │                    │   'host': 'localhost',                                                        │               │
+│ │                    │   'user': 'root',                                                             │               │
+│ │                    │   'password': 'myjotasql1+',                                                  │               │
+│ │                    │   'password1': '',                                                            │               │
+│ │                    │   'password2': '',                                                            │               │
+│ │                    │   'password3': '',                                                            │               │
+│ │                    │   'database': 'citypark',                                                     │               │
+│ │                    │   'port': 3306,                                                               │               │
+│ │                    │   'client_flags': 3383821,                                                    │               │
+│ │                    │   'unix_socket': None,                                                        │               │
+│ │                    │   ... +17                                                                     │               │
+│ │                    }                                                                               │               │
+│ │             self = <mysql.connector.connection_cext.CMySQLConnection object at 0x0000020A51DF2ED0> │               │
+│ │ ssl_ciphersuites = None                                                                            │               │
+│ │ tls_ciphersuites = None                                                                            │               │
+│ │     tls_versions = None                                                                            │               │
+│ ╰────────────────────────────────────────────────────────────────────────────────────────────────────╯               │
+╰──────────────────────────────────────────────────────────────────────────────────────────────────────────────────────╯
+MySQLInterfaceError: Access denied for user 'root'@'localhost' (using password: YES)
+
+The above exception was the direct cause of the following exception:
+
+╭───────────────────────────────────────── Traceback (most recent call last) ──────────────────────────────────────────╮
+│ C:\Python312\Lib\site-packages\fastapi_cli\cli.py:174 in dev                                                         │
+│                                                                                                                      │
+│   171 │                                                                                                              │
+│   172 │   Otherwise, it uses the first [bold]FastAPI[/bold] app found in the imported module o                       │
+│   173 │   """                                                                                                        │
+│ ❱ 174 │   _run(                                                                                                      │
+│   175 │   │   path=path,                                                                                             │
+│   176 │   │   host=host,                                                                                             │
+│   177 │   │   port=port,                                                                                             │
+│                                                                                                                      │
+│ ╭──────────────── locals ────────────────╮                                                                           │
+│ │           app = None                   │                                                                           │
+│ │          host = '127.0.0.1'            │                                                                           │
+│ │          path = WindowsPath('main.py') │                                                                           │
+│ │          port = 8000                   │                                                                           │
+│ │ proxy_headers = True                   │                                                                           │
+│ │        reload = True                   │                                                                           │
+│ │     root_path = ''                     │                                                                           │
+│ ╰────────────────────────────────────────╯                                                                           │
+│                                                                                                                      │
+│ C:\Python312\Lib\site-packages\fastapi_cli\cli.py:65 in _run                                                         │
+│                                                                                                                      │
+│    62 │   proxy_headers: bool = False,                                                                               │
+│    63 ) -> None:                                                                                                     │
+│    64 │   try:                                                                                                       │
+│ ❱  65 │   │   use_uvicorn_app = get_import_string(path=path, app_name=app)                                           │
+│    66 │   except FastAPICLIException as e:                                                                           │
+│    67 │   │   logger.error(str(e))                                                                                   │
+│    68 │   │   raise typer.Exit(code=1) from None                                                                     │
+│                                                                                                                      │
+│ ╭──────────────── locals ────────────────╮                                                                           │
+│ │           app = None                   │                                                                           │
+│ │       command = 'dev'                  │                                                                           │
+│ │          host = '127.0.0.1'            │                                                                           │
+│ │          path = WindowsPath('main.py') │                                                                           │
+│ │          port = 8000                   │                                                                           │
+│ │ proxy_headers = True                   │                                                                           │
+│ │        reload = True                   │                                                                           │
+│ │     root_path = ''                     │                                                                           │
+│ │       workers = None                   │                                                                           │
+│ ╰────────────────────────────────────────╯                                                                           │
+│                                                                                                                      │
+│ C:\Python312\Lib\site-packages\fastapi_cli\discover.py:150 in get_import_string                                      │
+│                                                                                                                      │
+│   147 │   │   raise FastAPICLIException(f"Path does not exist {path}")                                               │
+│   148 │   mod_data = get_module_data_from_path(path)                                                                 │
+│   149 │   sys.path.insert(0, str(mod_data.extra_sys_path))                                                           │
+│ ❱ 150 │   use_app_name = get_app_name(mod_data=mod_data, app_name=app_name)                                          │
+│   151 │   import_example = Syntax(                                                                                   │
+│   152 │   │   f"from {mod_data.module_import_str} import {use_app_name}", "python"                                   │
+│   153 │   )                                                                                                          │
+│                                                                                                                      │
+│ ╭─────────────────────────────────────────────────── locals ───────────────────────────────────────────────────╮     │
+│ │ app_name = None                                                                                              │     │
+│ │ mod_data = ModuleData(                                                                                       │     │
+│ │            │   module_import_str='main',                                                                     │     │
+│ │            │   extra_sys_path=WindowsPath('C:/Users/Usuario/Downloads/Rest_MySQL_Fastapi_React/AppCityPark') │     │
+│ │            )                                                                                                 │     │
+│ │     path = WindowsPath('main.py')                                                                            │     │
+│ ╰──────────────────────────────────────────────────────────────────────────────────────────────────────────────╯     │
+│                                                                                                                      │
+│ C:\Python312\Lib\site-packages\fastapi_cli\discover.py:103 in get_app_name                                           │
+│                                                                                                                      │
+│   100                                                                                                                │
+│   101 def get_app_name(*, mod_data: ModuleData, app_name: Union[str, None] = None) -> str:                           │
+│   102 │   try:                                                                                                       │
+│ ❱ 103 │   │   mod = importlib.import_module(mod_data.module_import_str)                                              │
+│   104 │   except (ImportError, ValueError) as e:                                                                     │
+│   105 │   │   logger.error(f"Import error: {e}")                                                                     │
+│   106 │   │   logger.warning(                                                                                        │
+│                                                                                                                      │
+│ ╭─────────────────────────────────────────────────── locals ───────────────────────────────────────────────────╮     │
+│ │ app_name = None                                                                                              │     │
+│ │ mod_data = ModuleData(                                                                                       │     │
+│ │            │   module_import_str='main',                                                                     │     │
+│ │            │   extra_sys_path=WindowsPath('C:/Users/Usuario/Downloads/Rest_MySQL_Fastapi_React/AppCityPark') │     │
+│ │            )                                                                                                 │     │
+│ ╰──────────────────────────────────────────────────────────────────────────────────────────────────────────────╯     │
+│                                                                                                                      │
+│ C:\Python312\Lib\importlib\__init__.py:90 in import_module                                                           │
+│                                                                                                                      │
+│    87 │   │   │   if character != '.':                                                         ╭───── locals ─────╮  │
+│    88 │   │   │   │   break                                                                    │   level = 0      │  │
+│    89 │   │   │   level += 1                                                                   │    name = 'main' │  │
+│ ❱  90 │   return _bootstrap._gcd_import(name[level:], package, level)                          │ package = None   │  │
+│    91                                                                                          ╰──────────────────╯  │
+│    92                                                                                                                │
+│    93 _RELOADING = {}                                                                                                │
+│ in _gcd_import:1387                                                                                                  │
+│ ╭───── locals ─────╮                                                                                                 │
+│ │   level = 0      │                                                                                                 │
+│ │    name = 'main' │                                                                                                 │
+│ │ package = None   │                                                                                                 │
+│ ╰──────────────────╯                                                                                                 │
+│ in _find_and_load:1360                                                                                               │
+│ ╭──────────────────── locals ────────────────────╮                                                                   │
+│ │ module = <object object at 0x0000020A4CF78060> │                                                                   │
+│ │   name = 'main'                                │                                                                   │
+│ ╰────────────────────────────────────────────────╯                                                                   │
+│ in _find_and_load_unlocked:1331                                                                                      │
+│ ╭───────────────────────────────────────────────────── locals ─────────────────────────────────────────────────────╮ │
+│ │        name = 'main'                                                                                             │ │
+│ │      parent = ''                                                                                                 │ │
+│ │ parent_spec = None                                                                                               │ │
+│ │        path = None                                                                                               │ │
+│ │        spec = ModuleSpec(name='main', loader=<_frozen_importlib_external.SourceFileLoader object at              │ │
+│ │               0x0000020A51DF2EA0>,                                                                               │ │
+│ │               origin='C:\\Users\\Usuario\\Downloads\\Rest_MySQL_Fastapi_React\\AppCityPark\\main.py')            │ │
+│ ╰──────────────────────────────────────────────────────────────────────────────────────────────────────────────────╯ │
+│ in _load_unlocked:935                                                                                                │
+│ ╭───────────────────────────────────────────────────── locals ─────────────────────────────────────────────────────╮ │
+│ │ module = <module 'main' from 'C:\\Users\\Usuario\\Downloads\\Rest_MySQL_Fastapi_React\\AppCityPark\\main.py'>    │ │
+│ │   spec = ModuleSpec(name='main', loader=<_frozen_importlib_external.SourceFileLoader object at                   │ │
+│ │          0x0000020A51DF2EA0>,                                                                                    │ │
+│ │          origin='C:\\Users\\Usuario\\Downloads\\Rest_MySQL_Fastapi_React\\AppCityPark\\main.py')                 │ │
+│ ╰──────────────────────────────────────────────────────────────────────────────────────────────────────────────────╯ │
+│ in exec_module:995                                                                                                   │
+│ ╭───────────────────────────────────────────────────── locals ─────────────────────────────────────────────────────╮ │
+│ │   code = <code object <module> at 0x0000020A505898F0, file                                                       │ │
+│ │          "C:\Users\Usuario\Downloads\Rest_MySQL_Fastapi_React\AppCityPark\main.py", line 1>                      │ │
+│ │ module = <module 'main' from 'C:\\Users\\Usuario\\Downloads\\Rest_MySQL_Fastapi_React\\AppCityPark\\main.py'>    │ │
+│ │   self = <_frozen_importlib_external.SourceFileLoader object at 0x0000020A51DF2EA0>                              │ │
+│ ╰──────────────────────────────────────────────────────────────────────────────────────────────────────────────────╯ │
+│ in _call_with_frames_removed:488                                                                                     │
+│ ╭───────────────────────────────────────────────────── locals ─────────────────────────────────────────────────────╮ │
+│ │ args = (                                                                                                         │ │
+│ │        │   <code object <module> at 0x0000020A505898F0, file                                                     │ │
+│ │        "C:\Users\Usuario\Downloads\Rest_MySQL_Fastapi_React\AppCityPark\main.py", line 1>,                       │ │
+│ │        │   {                                                                                                     │ │
+│ │        │   │   '__name__': 'main',                                                                               │ │
+│ │        │   │   '__doc__': None,                                                                                  │ │
+│ │        │   │   '__package__': '',                                                                                │ │
+│ │        │   │   '__loader__': <_frozen_importlib_external.SourceFileLoader object at 0x0000020A51DF2EA0>,         │ │
+│ │        │   │   '__spec__': ModuleSpec(name='main', loader=<_frozen_importlib_external.SourceFileLoader object at │ │
+│ │        0x0000020A51DF2EA0>,                                                                                      │ │
+│ │        origin='C:\\Users\\Usuario\\Downloads\\Rest_MySQL_Fastapi_React\\AppCityPark\\main.py'),                  │ │
+│ │        │   │   '__file__': 'C:\\Users\\Usuario\\Downloads\\Rest_MySQL_Fastapi_React\\AppCityPark\\main.py',      │ │
+│ │        │   │   '__cached__':                                                                                     │ │
+│ │        'C:\\Users\\Usuario\\Downloads\\Rest_MySQL_Fastapi_React\\AppCityPark\\__pycache__\\main'+16,             │ │
+│ │        │   │   '__builtins__': {                                                                                 │ │
+│ │        │   │   │   '__name__': 'builtins',                                                                       │ │
+│ │        │   │   │   '__doc__': 'Built-in functions, types, exceptions, and other objects.\n\nThis module provides │ │
+│ │        '+346,                                                                                                    │ │
+│ │        │   │   │   '__package__': '',                                                                            │ │
+│ │        │   │   │   '__loader__': <class '_frozen_importlib.BuiltinImporter'>,                                    │ │
+│ │        │   │   │   '__spec__': ModuleSpec(name='builtins', loader=<class '_frozen_importlib.BuiltinImporter'>,   │ │
+│ │        origin='built-in'),                                                                                       │ │
+│ │        │   │   │   '__build_class__': <built-in function __build_class__>,                                       │ │
+│ │        │   │   │   '__import__': <built-in function __import__>,                                                 │ │
+│ │        │   │   │   'abs': <built-in function abs>,                                                               │ │
+│ │        │   │   │   'all': <built-in function all>,                                                               │ │
+│ │        │   │   │   'any': <built-in function any>,                                                               │ │
+│ │        │   │   │   ... +148                                                                                      │ │
+│ │        │   │   },                                                                                                │ │
+│ │        │   │   'Union': typing.Union,                                                                            │ │
+│ │        │   │   'FastAPI': <class 'fastapi.applications.FastAPI'>                                                 │ │
+│ │        │   }                                                                                                     │ │
+│ │        )                                                                                                         │ │
+│ │    f = <built-in function exec>                                                                                  │ │
+│ │ kwds = {}                                                                                                        │ │
+│ ╰──────────────────────────────────────────────────────────────────────────────────────────────────────────────────╯ │
+│                                                                                                                      │
+│ C:\Users\Usuario\Downloads\Rest_MySQL_Fastapi_React\AppCityPark\main.py:3 in <module>                                │
+│                                                                                                                      │
+│    1 from typing import Union                                                                                        │
+│    2 from fastapi import FastAPI                                                                                     │
+│ ❱  3 from usuario_map import usuarioRouter                                                                           │
+│    4 from cargo_map import cargoRouter                                                                               │
+│    5                                                                                                                 │
+│    6 app = FastAPI()                                                                                                 │
+│                                                                                                                      │
+│ ╭─────── locals ───────╮                                                                                             │
+│ │ Union = typing.Union │                                                                                             │
+│ ╰──────────────────────╯                                                                                             │
+│                                                                                                                      │
+│ C:\Users\Usuario\Downloads\Rest_MySQL_Fastapi_React\AppCityPark\usuario_map.py:3 in <module>                         │
+│                                                                                                                      │
+│    1 from fastapi import APIRouter, HTTPException, status                                                            │
+│    2 from pydantic import BaseModel                                                                                  │
+│ ❱  3 from Clever_MySQL_conn import cleverCursor                                                                      │
+│    4                                                                                                                 │
+│    5 usuarioRouter =  APIRouter()                                                                                    │
+│    6                                                                                                                 │
+│                                                                                                                      │
+│ ╭────────────────────────────────────────────── locals ───────────────────────────────────────────────╮              │
+│ │ status = <module 'starlette.status' from 'C:\\Python312\\Lib\\site-packages\\starlette\\status.py'> │              │
+│ ╰─────────────────────────────────────────────────────────────────────────────────────────────────────╯              │
+│                                                                                                                      │
+│ C:\Users\Usuario\Downloads\Rest_MySQL_Fastapi_React\AppCityPark\Clever_MySQL_conn.py:5 in <module>                   │
+│                                                                                                                      │
+│    2 import mysql.connector                                                                                          │
+│    3                                                                                                                 │
+│    4 #Connect to the database                                                                                        │
+│ ❱  5 mysqlConn = mysql.connector.Connect(                                                                            │
+│    6 │   host = 'localhost', #'bmn0p7ohukcq6xxuqudp-mysql.services.clever-cloud.com',                                │
+│    7 │   user = 'root', #upfp89sjo0fd79v0',                                                                          │
+│    8 │   password = 'myjotasql1+',#'HGByo9urELWdufYqUvsG',                                                           │
+│                                                                                                                      │
+│ ╭─────────────────────────────────────── locals ────────────────────────────────────────╮                            │
+│ │ mysql = <module 'mysql' from 'C:\\Python312\\Lib\\site-packages\\mysql\\__init__.py'> │                            │
+│ ╰───────────────────────────────────────────────────────────────────────────────────────╯                            │
+│                                                                                                                      │
+│ C:\Python312\Lib\site-packages\mysql\connector\pooling.py:322 in connect                                             │
+│                                                                                                                      │
+│   319 │   │   │   raise ImportError(ERROR_NO_CEXT)                                                                   │
+│   320 │                                                                                                              │
+│   321 │   if CMySQLConnection and not use_pure:                                                                      │
+│ ❱ 322 │   │   return CMySQLConnection(*args, **kwargs)                                                               │
+│   323 │   return MySQLConnection(*args, **kwargs)                                                                    │
+│   324                                                                                                                │
+│   325                                                                                                                │
+│                                                                                                                      │
+│ ╭───────────────── locals ──────────────────╮                                                                        │
+│ │     args = ()                             │                                                                        │
+│ │  dns_srv = False                          │                                                                        │
+│ │   kwargs = {                              │                                                                        │
+│ │            │   'host': 'localhost',       │                                                                        │
+│ │            │   'user': 'root',            │                                                                        │
+│ │            │   'password': 'myjotasql1+', │                                                                        │
+│ │            │   'database': 'citypark',    │                                                                        │
+│ │            │   'port': 3306               │                                                                        │
+│ │            }                              │                                                                        │
+│ │ use_pure = False                          │                                                                        │
+│ ╰───────────────────────────────────────────╯                                                                        │
+│                                                                                                                      │
+│ C:\Python312\Lib\site-packages\mysql\connector\connection_cext.py:151 in __init__                                    │
+│                                                                                                                      │
+│    148 │   │                                                                                                         │
+│    149 │   │   if kwargs:                                                                                            │
+│    150 │   │   │   try:                                                                                              │
+│ ❱  151 │   │   │   │   self.connect(**kwargs)                                                                        │
+│    152 │   │   │   except Exception:                                                                                 │
+│    153 │   │   │   │   self.close()                                                                                  │
+│    154 │   │   │   │   raise                                                                                         │
+│                                                                                                                      │
+│ ╭──────────────────────────────────────────────────── locals ─────────────────────────────────────────────────────╮  │
+│ │ kwargs = {'host': 'localhost', 'user': 'root', 'password': 'myjotasql1+', 'database': 'citypark', 'port': 3306} │  │
+│ │   self = <mysql.connector.connection_cext.CMySQLConnection object at 0x0000020A51DF2ED0>                        │  │
+│ ╰─────────────────────────────────────────────────────────────────────────────────────────────────────────────────╯  │
+│                                                                                                                      │
+│ C:\Python312\Lib\site-packages\mysql\connector\abstracts.py:1426 in connect                                          │
+│                                                                                                                      │
+│   1423 │   │   │   self.config(**kwargs)                                                                             │
+│   1424 │   │                                                                                                         │
+│   1425 │   │   self.disconnect()                                                                                     │
+│ ❱ 1426 │   │   self._open_connection()                                                                               │
+│   1427 │   │                                                                                                         │
+│   1428 │   │   charset, collation = (                                                                                │
+│   1429 │   │   │   kwargs.pop("charset", None),                                                                      │
+│                                                                                                                      │
+│ ╭──────────────────────────────────────────────────── locals ─────────────────────────────────────────────────────╮  │
+│ │ kwargs = {'host': 'localhost', 'user': 'root', 'password': 'myjotasql1+', 'database': 'citypark', 'port': 3306} │  │
+│ │   self = <mysql.connector.connection_cext.CMySQLConnection object at 0x0000020A51DF2ED0>                        │  │
+│ ╰─────────────────────────────────────────────────────────────────────────────────────────────────────────────────╯  │
+│                                                                                                                      │
+│ C:\Python312\Lib\site-packages\mysql\connector\connection_cext.py:340 in _open_connection                            │
+│                                                                                                                      │
+│    337 │   │   │   if self.converter:                                                                                │
+│    338 │   │   │   │   self.converter.str_fallback = self._converter_str_fallback                                    │
+│    339 │   │   except MySQLInterfaceError as err:                                                                    │
+│ ❱  340 │   │   │   raise get_mysql_exception(                                                                        │
+│    341 │   │   │   │   msg=err.msg, errno=err.errno, sqlstate=err.sqlstate                                           │
+│    342 │   │   │   ) from err                                                                                        │
+│    343                                                                                                               │
+│                                                                                                                      │
+│ ╭────────────────────────────────────────────── locals ──────────────────────────────────────────────╮               │
+│ │     charset_name = 'utf8mb4'                                                                       │               │
+│ │       cnx_kwargs = {                                                                               │               │
+│ │                    │   'host': 'localhost',                                                        │               │
+│ │                    │   'user': 'root',                                                             │               │
+│ │                    │   'password': 'myjotasql1+',                                                  │               │
+│ │                    │   'password1': '',                                                            │               │
+│ │                    │   'password2': '',                                                            │               │
+│ │                    │   'password3': '',                                                            │               │
+│ │                    │   'database': 'citypark',                                                     │               │
+│ │                    │   'port': 3306,                                                               │               │
+│ │                    │   'client_flags': 3383821,                                                    │               │
+│ │                    │   'unix_socket': None,                                                        │               │
+│ │                    │   ... +17                                                                     │               │
+│ │                    }                                                                               │               │
+│ │             self = <mysql.connector.connection_cext.CMySQLConnection object at 0x0000020A51DF2ED0> │               │
+│ │ ssl_ciphersuites = None                                                                            │               │
+│ │ tls_ciphersuites = None                                                                            │               │
+│ │     tls_versions = None                                                                            │               │
+│ ╰────────────────────────────────────────────────────────────────────────────────────────────────────╯               │
+╰──────────────────────────────────────────────────────────────────────────────────────────────────────────────────────╯
+ProgrammingError: 1045 (28000): Access denied for user 'root'@'localhost' (using password: YES)
+
+C:\Users\Usuario\Downloads\Rest_MySQL_Fastapi_React\AppCityPark>root

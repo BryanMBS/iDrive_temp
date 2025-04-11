@@ -1,0 +1,113 @@
+/* Agendamientos.css */
+
+/* General */
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: #f8f9fc;
+  color: #333;
+}
+
+/* Contenedor completo */
+.agendamientos-wrapper {
+  display: flex;
+}
+
+/* Contenido principal al lado del sidebar */
+.main-content {
+  margin-left: 250px;
+  padding: 30px;
+  width: 100%;
+}
+
+/* Botones personalizados */
+.agendamiento-botones {
+  margin-bottom: 20px;
+}
+
+.btn-agendar {
+  background-color: #28a745;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 6px;
+  font-size: 16px;
+  transition: background-color 0.3s ease;
+}
+
+.btn-agendar:hover {
+  background-color: #218838;
+  cursor: pointer;
+}
+
+.btn-modificar {
+  background-color: #ffc107;
+  color: black;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 6px;
+  font-size: 16px;
+  transition: background-color 0.3s ease;
+}
+
+.btn-modificar:hover {
+  background-color: #e0a800;
+  cursor: pointer;
+}
+
+.btn-cancelar {
+  background-color: #dc3545;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 6px;
+  font-size: 16px;
+  transition: background-color 0.3s ease;
+}
+
+.btn-cancelar:hover {
+  background-color: #c82333;
+  cursor: pointer;
+}
+
+/* Calendario */
+.fc {
+  width: 100% !important;
+}
+
+.fc-event {
+  background-color: #4CAF50;
+  color: white;
+  border-radius: 4px;
+  padding: 5px;
+  font-weight: bold;
+  font-size: 14px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.fc-event:hover {
+  background-color: #45a049;
+  cursor: pointer;
+}
+
+.fc-toolbar-title {
+  font-size: 24px;
+  font-weight: bold;
+  color: #333;
+}
+
+.fc-button {
+  background-color: #007bff;
+  color: white;
+  border: none;
+}
+
+.fc-button:hover {
+  background-color: #0056b3;
+}
+
+.fc-header-toolbar {
+  margin-bottom: 20px;
+}
+
+  
